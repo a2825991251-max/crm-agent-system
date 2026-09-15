@@ -970,12 +970,14 @@ class CRMHandler(SimpleHTTPRequestHandler):
 
 def main() -> None:
     init_db()
-    port = int(sys.argv[1]) if len(sys.argv) > 1 else 4173
-    server = ThreadingHTTPServer(("127.0.0.1", port), CRMHandler)
+    cli_port = int(sys.argv[1]) if len(sys.argv) > 1 else None
+    port = int(os.environ.get("PORT") or cli_port or 4173)
+    host = os.environ.get("CRM_HOST", "0.0.0.0")
+    server = ThreadingHTTPServer((host, port), CRMHandler)
     stop_event = threading.Event()
     scheduler = threading.Thread(target=scheduler_loop, args=(stop_event,), name="crm-scheduler", daemon=True)
     scheduler.start()
-    print(f"Qingshan CRM running at http://127.0.0.1:{port}")
+    print(f"Qingshan CRM running at http://{host}:{port}")
     try:
         server.serve_forever()
     except KeyboardInterrupt:
