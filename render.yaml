@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: crm-agent-system
+    runtime: python
+    plan: free
+    buildCommand: ""
+    startCommand: python3 server.py
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
