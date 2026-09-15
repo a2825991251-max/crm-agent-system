@@ -1,0 +1,11 @@
+.env
+.env.local
+.env.*.local
+.env.*.swp
+*.swp
+*.swo
+data/*
+__pycache__/
+*.py[cod]
+.DS_Store
+*.log
