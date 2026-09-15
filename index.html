@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:,">
+  <meta name="theme-color" content="#f4f6f8">
+  <title>青杉 CRM · 智能咨询工作台</title>
+  <link rel="stylesheet" href="styles.css?v=20260915-ai-config-top">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="主导航">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <div><strong>青杉 CRM</strong><small>咨询协作中心</small></div>
+      </div>
+
+      <nav class="main-nav">
+        <button class="nav-item active" data-view="workspace"><span class="nav-icon">⌂</span><span>客户工作台</span><b>8</b></button>
+        <button class="nav-item" data-view="customers"><span class="nav-icon">◎</span><span>全部客户</span></button>
+        <button class="nav-item" data-view="inbox"><span class="nav-icon">▤</span><span>对话导入</span><b>3</b></button>
+        <button class="nav-item" data-view="agents"><span class="nav-icon">◇</span><span>Agent 中心</span></button>
+        <button class="nav-item" data-view="compliance"><span class="nav-icon">✓</span><span>合规审核</span><b class="warn-badge">2</b></button>
+        <button class="nav-item" data-view="knowledge"><span class="nav-icon">▥</span><span>知识库</span></button>
+      </nav>
+
+      <div class="sidebar-foot">
+        <div class="system-health"><span></span><div><strong>服务运行正常</strong><small>知识库更新于 09:24</small></div></div>
+        <button class="user-menu" id="user-menu"><span class="avatar small">陈</span><span><strong>陈顾问</strong><small>高级课程顾问</small></span><span>⋮</span></button>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="mobile-brand"><span class="brand-mark"><i></i><i></i><i></i></span><strong>青杉 CRM</strong></div>
+        <button class="mobile-menu" id="mobile-menu" aria-label="打开导航">☰</button>
+        <div class="breadcrumb"><span>客户工作台</span><b>/</b><strong>林女士家庭</strong></div>
+        <div class="top-actions">
+          <label class="global-search"><span>⌕</span><input id="global-search" placeholder="搜索客户、手机号、标签" aria-label="全局搜索"></label>
+          <button class="icon-btn" title="通知" aria-label="通知">◷<i></i></button>
+          <button class="primary-btn" id="import-open"><span>＋</span> 导入对话</button>
+        </div>
+      </header>
+
+      <section id="workspace-view" class="view active-view">
+        <div class="customer-header">
+          <div class="customer-title">
+            <span class="avatar large">林</span>
+            <div>
+              <div class="title-line"><h1>林女士家庭</h1><select id="student-switcher" aria-label="切换学生"></select><span class="stage-pill">持续跟进</span><span class="risk-pill">中意向</span></div>
+              <p>学生：林梓轩 · 初二 · 杭州 · 负责人：陈顾问</p>
+            </div>
+          </div>
+          <div class="header-actions">
+            <div class="run-stack"><button class="secondary-btn" id="configure-ai" type="button">配置 AI</button><button class="primary-btn" id="run-all">运行全部 Agent <span>→</span></button></div>
+          </div>
+        </div>
+
+        <div class="status-strip" id="status-strip">
+          <div class="status-main"><span class="status-dot ready"></span><strong>上次分析已通过合规审核</strong><span>v5 · 18 分钟前</span></div>
+          <button class="text-btn" id="view-history">查看运行记录 <span>›</span></button>
+        </div>
+
+        <div class="workspace-grid">
+          <section class="content-column">
+            <div class="tabs" role="tablist">
+              <button class="tab active" data-tab="overview">客户概览</button>
+              <button class="tab" data-tab="conversation">对话记录 <span>300</span></button>
+              <button class="tab" data-tab="plan">触达策略</button>
+              <button class="tab" data-tab="sop">自动跟进 SOP</button>
+              <button class="tab" data-tab="tasks">跟进任务 <span>3</span></button>
+            </div>
+
+            <div id="tab-overview" class="tab-panel active">
+              <div class="section-heading">
+                <div><h2>客户画像</h2><p>由 Agent 1 从 300 条历史对话中提取，关键信息均可回溯原文</p></div>
+                <button class="text-btn" data-open-agent="1">查看完整产物 <span>›</span></button>
+              </div>
+
+              <div class="profile-grid">
+                <div class="profile-block">
+                  <h3><span class="mini-icon blue">人</span> 学生情况</h3>
+                  <dl><div><dt>学生 / 年级</dt><dd>林梓轩 · 初二</dd></div><div><dt>当前水平</dt><dd>数学 76 分，函数模块薄弱 <button class="source-link" data-source="184">原文 184</button></dd></div><div><dt>学习习惯</dt><dd>作业完成，但错题复盘不稳定</dd></div></dl>
+                </div>
+                <div class="profile-block">
+                  <h3><span class="mini-icon green">标</span> 目标与动机</h3>
+                  <dl><div><dt>核心目标</dt><dd>期末数学稳定在 85 分以上</dd></div><div><dt>目标期限</dt><dd>本学期期末前 · 约 12 周</dd></div><div><dt>家长关注</dt><dd>希望过程可见，避免只刷题</dd></div></dl>
+                </div>
+                <div class="profile-block">
+                  <h3><span class="mini-icon amber">¥</span> 预算与时间</h3>
+                  <dl><div><dt>预算上限</dt><dd>¥20,000 / 学期 <button class="source-link" data-source="227">原文 227</button></dd></div><div><dt>可用时间</dt><dd>周六上午、周日下午</dd></div><div><dt>每周上限</dt><dd>3 小时（硬约束）</dd></div></dl>
+                </div>
+                <div class="profile-block">
+                  <h3><span class="mini-icon red">!</span> 阻力与风险</h3>
+                  <dl><div><dt>主要顾虑</dt><dd>曾报班效果不透明</dd></div><div><dt>沟通偏好</dt><dd>先看诊断结果，再决定长期课</dd></div><div><dt>待确认</dt><dd><span class="needs-confirm">最近一次区统考排名</span></dd></div></dl>
+                </div>
+              </div>
+
+              <div class="insight-band">
+                <div class="insight-title"><span>✦</span><div><h3>Agent 洞察</h3><p>优先跟踪函数转换问题；半个月后主动询问错题复盘近况</p></div></div>
+                <div class="insight-stats"><span><b>18</b>确认事实</span><span><b>6</b>关键标签</span><span><b>3</b>相似案例</span><span><b>2</b>待确认项</span></div>
+              </div>
+
+              <div class="section-heading compact"><div><h2>触达决策摘要</h2><p>Agent 2 根据问题优先级与低频联系规则生成</p></div><span class="approved"><i>✓</i> 合规通过</span></div>
+              <div class="plan-timeline">
+                <div class="phase"><span class="phase-index">01</span><div><span class="phase-time">第 7 天</span><h3>函数转换困难</h3><p>询问问题是否仍存在，以及最近一次具体情形</p><small>高优先级 · 联系家长</small></div></div>
+                <div class="phase"><span class="phase-index">02</span><div><span class="phase-time">第 15 天</span><h3>错题复盘不稳定</h3><p>询问近期是否仍出现，以及家长观察到的困难</p><small>中优先级 · 联系家长</small></div></div>
+                <div class="phase"><span class="phase-index">03</span><div><span class="phase-time">第 30 天</span><h3>反馈透明度顾虑</h3><p>询问顾虑是否仍存在，以及现在最想确认的事项</p><small>中优先级 · 联系家长</small></div></div>
+              </div>
+
+              <div class="constraint-row">
+                <div><span class="constraint-label">触达频率</span><strong>3 / 3 次</strong><span class="progress"><i style="width:100%"></i></span><em>30 天上限</em></div>
+                <div><span class="constraint-label">暂停条件</span><strong>连续 2 次未回复</strong><span class="progress time"><i style="width:66%"></i></span><em>家长要求时立即停止</em></div>
+              </div>
+            </div>
+
+            <div id="tab-conversation" class="tab-panel">
+              <div class="conversation-toolbar"><div><h2>历史对话</h2><p>共 300 条 · 微信导入 · 2026-07-12 至 2026-09-13</p></div><label class="local-search">⌕ <input id="message-search" placeholder="搜索对话内容"></label></div>
+              <div class="conversation-list" id="conversation-list"></div>
+            </div>
+
+            <div id="tab-plan" class="tab-panel"></div>
+            <div id="tab-sop" class="tab-panel"></div>
+            <div id="tab-tasks" class="tab-panel"></div>
+          </section>
+
+          <aside class="agent-column">
+            <div class="agent-panel-head"><div><h2>Agent 协作链路</h2><p>尚未运行</p></div><button class="icon-plain" id="agent-more" title="更多选项">•••</button></div>
+            <div class="ai-runtime" id="ai-runtime">
+              <span class="ai-mark">AI</span>
+              <div><strong id="ai-mode">正在检测 AI 服务</strong><small id="ai-detail">密钥仅由本地服务读取</small></div>
+              <span class="runtime-state" id="ai-state">检测中</span>
+            </div>
+            <div class="run-progress hidden" id="run-progress"><div><span id="run-label">正在准备...</span><b id="run-percent">0%</b></div><span><i id="run-bar"></i></span></div>
+            <div class="agent-list" id="agent-list">
+              <button class="agent-step" data-agent="1">
+                <span class="agent-number">A1</span><span class="agent-copy"><strong>理解客户</strong><small>压缩 · 画像 · 知识检索</small><em>尚未运行</em></span><span class="step-status">—</span>
+              </button>
+              <span class="connector"></span>
+              <button class="agent-step" data-agent="2">
+                <span class="agent-number">A2</span><span class="agent-copy"><strong>触达决策</strong><small>优先级 · 时间 · 停止条件</small><em>尚未运行</em></span><span class="step-status">—</span>
+              </button>
+              <span class="connector"></span>
+              <button class="agent-step" data-agent="3">
+                <span class="agent-number">A3</span><span class="agent-copy"><strong>主动询问</strong><small>定时提问 · CRM · SOP</small><em>尚未运行</em></span><span class="step-status">—</span>
+              </button>
+              <span class="connector"></span>
+              <button class="agent-step audit" data-agent="4">
+                <span class="agent-number">A4</span><span class="agent-copy"><strong>合规闸门</strong><small>事实 · 频率 · 停止条件</small><em>尚未运行</em></span><span class="step-status shield">—</span>
+              </button>
+            </div>
+
+            <div class="next-action">
+              <div class="next-head"><span>下一步建议</span><b>今天</b></div>
+              <h3>运行 Agent 生成 SOP</h3>
+              <p>完成问题识别、触达决策和合规审核后，才会出现 SOP。</p>
+              <button class="primary-btn full" id="open-script">运行全部 Agent</button>
+            </div>
+
+            <div class="audit-summary">
+              <div><h3>发布状态</h3><span id="release-status" class="release-state pending">待运行</span></div>
+              <dl><div><dt>问题溯源</dt><dd id="audit-trace">待检查</dd></div><div><dt>触达频率</dt><dd id="audit-frequency">待检查</dd></div><div><dt>额外承诺</dt><dd id="audit-promise">待检查</dd></div><div><dt>人工复核</dt><dd id="audit-manual">待检查</dd></div></dl>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="customers-view" class="view"></section>
+      <section id="inbox-view" class="view"></section>
+      <section id="agents-view" class="view"></section>
+      <section id="compliance-view" class="view"></section>
+      <section id="knowledge-view" class="view"></section>
+    </main>
+  </div>
+
+  <dialog id="import-dialog" class="dialog import-dialog">
+    <form method="dialog">
+      <div class="dialog-head"><div><span class="eyebrow">新建分析</span><h2>导入历史对话</h2><p>支持粘贴聊天文本或上传 TXT / CSV，Agent 会自动识别说话人和时间。</p></div><button class="close-btn" value="cancel" aria-label="关闭">×</button></div>
+      <div class="import-source-tabs"><button type="button" class="active" data-import-mode="paste">粘贴文本</button><button type="button" data-import-mode="file">上传文件</button></div>
+      <div class="import-area" id="paste-area">
+        <div class="synthetic-notice"><span>测试数据</span><p>可载入 300 条完全虚构的长对话，包含有效事实、重复确认、闲聊和主观情绪。</p></div>
+        <textarea id="import-text" placeholder="示例：&#10;2026-09-10 19:34 家长：预算希望控制在两万元以内。&#10;2026-09-10 19:36 顾问：孩子周末哪些时间方便？&#10;2026-09-10 19:38 家长：周六上午和周日下午都可以。"></textarea>
+        <div class="import-meta"><span id="line-count">0 条可识别消息</span><button type="button" class="secondary-btn sample-btn" id="use-sample">载入 300 条模拟对话</button></div>
+      </div>
+      <div class="file-area hidden" id="file-area"><input type="file" id="file-input" accept=".txt,.csv,text/plain,text/csv"><span class="upload-symbol">⇧</span><strong>选择文件或拖到这里</strong><small>最大 10 MB，导入前会先预览</small></div>
+      <div class="form-row"><label>客户名称<input id="import-customer" value="林女士家庭"></label><label>来源<select id="import-source"><option>微信</option><option>企业微信</option><option>电话转写</option><option>其他</option></select></label></div>
+      <div class="dialog-actions"><button class="secondary-btn" value="cancel">取消</button><button type="button" class="primary-btn" id="start-import">导入并运行 Agent</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="ai-config-dialog" class="dialog ai-config-dialog">
+    <form method="dialog" id="ai-config-form">
+      <div class="dialog-head"><div><span class="eyebrow">AI 连接</span><h2>配置兼容 API</h2><p>支持常见 Responses / Chat Completions 兼容接口；配置仅保存在本次本地服务会话。</p></div><button class="close-btn" value="cancel" aria-label="关闭">×</button></div>
+      <div class="ai-config-body">
+        <div class="ai-config-notice"><strong>隐私提示</strong><span>API Key 只发送到本机 CRM 服务，不会写入客户档案或浏览器存储。请确认中转服务的数据留存政策。</span></div>
+        <label>API Base URL<input id="ai-api-base" type="url" placeholder="https://api.example.com/v1" autocomplete="url"></label>
+        <label>模型名称<input id="ai-model" type="text" placeholder="例如 gpt-4o-mini" autocomplete="off"></label>
+        <label>接口格式<select id="ai-protocol"><option value="auto">自动兼容（推荐）</option><option value="responses">Responses API</option><option value="chat_completions">Chat Completions API</option></select></label>
+        <label>服务名称（可选）<input id="ai-provider" type="text" placeholder="兼容 AI 服务" autocomplete="organization"></label>
+        <label>API Key<input id="ai-api-key" type="password" placeholder="粘贴后仅在本次会话使用" autocomplete="new-password"></label>
+        <p class="ai-config-current" id="ai-config-current"></p>
+      </div>
+      <div class="dialog-actions"><button class="secondary-btn" id="clear-ai-config" type="button">切回演示模式</button><span></span><button class="secondary-btn" value="cancel">取消</button><button class="primary-btn" id="save-ai-config" type="submit">保存并启用 AI</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="detail-dialog" class="dialog detail-dialog">
+    <div class="dialog-head sticky"><div><span class="eyebrow" id="detail-eyebrow">AGENT 1 · v5</span><h2 id="detail-title">理解客户</h2><p id="detail-subtitle">结构化产物与证据链</p></div><button class="close-btn" id="detail-close" aria-label="关闭">×</button></div>
+    <div id="detail-content" class="detail-content"></div>
+  </dialog>
+
+  <dialog id="source-dialog" class="dialog source-dialog">
+    <div class="dialog-head"><div><span class="eyebrow">证据原文</span><h2 id="source-title">消息 #184</h2></div><button class="close-btn" id="source-close">×</button></div>
+    <blockquote id="source-quote"></blockquote><div class="source-meta" id="source-meta"></div>
+  </dialog>
+
+  <dialog id="customer-detail-dialog" class="dialog customer-detail-dialog">
+    <div class="dialog-head sticky"><div><span class="eyebrow" id="customer-detail-eyebrow">演示客户</span><h2 id="customer-detail-title">客户档案</h2><p id="customer-detail-subtitle">学生与沟通信息</p></div><button class="close-btn" id="customer-detail-close" aria-label="关闭">×</button></div>
+    <div id="customer-detail-content" class="customer-detail-content"></div>
+    <div class="dialog-actions"><button class="secondary-btn" id="customer-detail-cancel">返回列表</button><button class="primary-btn" id="switch-customer-workspace">切换到该学生</button></div>
+  </dialog>
+
+  <dialog id="chat-demo-dialog" class="dialog chat-demo-dialog">
+    <div class="dialog-head sticky"><div><span class="eyebrow">发送沙盒</span><h2>SOP 聊天发送演示</h2><p>演示模式 · 不会联系真实客户</p></div><button class="close-btn" id="chat-demo-close" aria-label="关闭">×</button></div>
+    <div class="chat-demo-layout">
+      <section class="chat-preview">
+        <header class="chat-person"><span class="avatar small">林</span><div><strong>林女士</strong><small><i></i> 企业微信客户联系</small></div><span class="demo-clock" id="demo-clock">等待开始</span></header>
+        <div class="chat-messages" id="demo-chat-messages"></div>
+        <div class="chat-composer"><span>＋</span><div>演示中不可手动发送</div><button aria-label="发送" disabled>↑</button></div>
+      </section>
+      <aside class="demo-queue">
+        <div class="demo-queue-head"><div><h3>发送队列</h3><p>当前 SOP · 3 条消息</p></div><span id="demo-result" class="status-chip">待运行</span></div>
+        <div id="demo-queue-list"></div>
+        <div class="demo-controls">
+          <label class="failure-toggle"><input type="checkbox" id="simulate-failure"> 模拟第 3 条首次失败</label>
+          <label>演示速度<select id="demo-speed"><option value="700">快速</option><option value="1300" selected>标准</option><option value="2200">慢速</option></select></label>
+          <div><button class="secondary-btn" id="reset-demo">重置</button><button class="primary-btn" id="start-demo">开始演示</button></div>
+        </div>
+      </aside>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status"><span>✓</span><div><strong>操作完成</strong><small></small></div></div>
+  <script src="app.js?v=20260915-github-safe"></script>
+</body>
+</html>
